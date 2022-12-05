@@ -9,7 +9,7 @@ public enum CurrencyType {
     POUND(1.64),
     RINGGIT(8.94),
     RUPEE(136.64),
-    SINGAPORE_DOLLAR(1.86),
+    SINGAPORE_DOLLAR(2.86),
     US_DOLLAR(2.0),
     UNIVERSAL_CURRENCY(1.0),
     YEN(231.68);
@@ -25,6 +25,11 @@ public enum CurrencyType {
     }
 
     public static CurrencyType getTypeOfCurrency(ConvertableCurrency currency) {
+        for (CurrencyType ct : CurrencyType.values()){
+            if(currency.getCurrencyType().equals(ct)){
+                return ct;
+            }
+        }
         return null;
     }
 }
