@@ -8,6 +8,6 @@ public interface ConvertableCurrency {
         return ct;
     }
     default Double convert(CurrencyType currencyType) {
-        return Double.MAX_VALUE;
+        return ct.getRate() / currencyType.getRate();
     }
 }

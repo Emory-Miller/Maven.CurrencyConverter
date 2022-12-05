@@ -9,4 +9,8 @@ public class USDollar implements ConvertableCurrency {
     public CurrencyType getCurrencyType() {
         return ct;
     }
+
+    public Double convert(CurrencyType currencyType) {
+        return currencyType.getRate()/ ct.getRate() ;
+    }
 }
